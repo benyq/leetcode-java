@@ -16,7 +16,7 @@ import java.util.Arrays;
  * 这个题需要重复练习
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.MEDIUM)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.MEDIUM)
 public class Question59 {
     public static void main(String[] args) {
         Question59 question = new Question59();

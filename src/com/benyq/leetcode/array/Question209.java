@@ -15,14 +15,14 @@ import com.benyq.leetcode.Status;
  * 中等题型，这个题需要重复练习
  */
 
-@Problem(difficulty = ProblemDifficulty.MEDIUM, status = Status.REPEAT)
+@Problem(difficulty = ProblemDifficulty.MEDIUM, status = Status.RESOLVED)
 public class Question209 {
     public static void main(String[] args) {
         Question209 question = new Question209();
-        System.out.println(question.minSubArrayLen(7, new int[]{2,3,1,2,4,3}));
-        System.out.println(question.minSubArrayLen(4, new int[]{1,4,4}));
-        System.out.println(question.minSubArrayLen(11, new int[]{1,2,3,4,5}));
-        System.out.println(question.minSubArrayLen(11, new int[]{1,1,1,1,1,1,1,1}));
+        System.out.println(question.minSubArrayLen(7, new int[]{2, 3, 1, 2, 4, 3}));
+        System.out.println(question.minSubArrayLen(4, new int[]{1, 4, 4}));
+        System.out.println(question.minSubArrayLen(11, new int[]{1, 2, 3, 4, 5}));
+        System.out.println(question.minSubArrayLen(11, new int[]{1, 1, 1, 1, 1, 1, 1, 1}));
 
     }
 
