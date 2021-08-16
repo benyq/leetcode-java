@@ -14,7 +14,7 @@ import com.benyq.leetcode.Status;
  * 翻转链表，不额外创建链表
  */
 
-@Problem(status = Status.UNRESOLVED, difficulty = ProblemDifficulty.EASY)
+@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.EASY)
 public class Question206 {
     public static void main(String[] args) {
         Question206 question = new Question206();
@@ -47,5 +47,19 @@ public class Question206 {
         cur.next = prev;
 
         return reverse(cur, temp);
+    }
+
+    //2021-08-16
+    private ListNode reverseList3(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+
+        return pre;
     }
 }
