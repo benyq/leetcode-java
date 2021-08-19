@@ -13,7 +13,7 @@ import com.benyq.leetcode.Status;
  * https://leetcode-cn.com/problems/swap-nodes-in-pairs/
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.MEDIUM)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.MEDIUM)
 public class Question24 {
     public static void main(String[] args) {
         Question24 question = new Question24();
@@ -53,5 +53,16 @@ public class Question24 {
         }
 
         return dump.next;
+    }
+
+    //递归方式
+    public ListNode swapPairsRecursion(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode next = head.next;
+        head.next = swapPairsRecursion(next.next);
+        next.next = head;
+        return next;
     }
 }
