@@ -62,4 +62,17 @@ public class Question206 {
 
         return pre;
     }
+
+    //2021-08-23
+    private ListNode reverseList4(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return cur;
+    }
 }
