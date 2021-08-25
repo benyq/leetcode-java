@@ -17,7 +17,7 @@ import java.util.Map;
  * https://leetcode-cn.com/problems/4sum-ii/
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.MEDIUM)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.MEDIUM)
 public class Question454 {
     public static void main(String[] args) {
         Question454 question = new Question454();
