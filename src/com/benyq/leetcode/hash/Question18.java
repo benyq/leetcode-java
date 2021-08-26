@@ -34,7 +34,7 @@ public class Question18 {
                 continue;
             }
             for (int j = i+1; j< nums.length;j++) {
-                if (j > i + 1 && nums[j - 1] == nums[j]) {
+                if ( j > i +1 && nums[j - 1] == nums[j]) {
                     continue;
                 }
                 int left = j + 1;
