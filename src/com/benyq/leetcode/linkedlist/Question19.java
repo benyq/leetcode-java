@@ -40,6 +40,7 @@ public class Question19 {
         if (n == 1) {
             return head.next;
         }
+        //移除节点
         slow.next = slow.next.next;
         return head;
     }
