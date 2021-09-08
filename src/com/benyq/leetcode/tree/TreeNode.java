@@ -29,6 +29,14 @@ public class TreeNode {
     }
 
 
+    @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
 
     public static TreeNode createTreeNode(Integer... nums) {
         if (nums.length == 0) {
@@ -38,7 +46,7 @@ public class TreeNode {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(head);
 
-        for (int i = 1; i < nums.length - 1; i += 2) {
+        for (int i = 1; i < nums.length; i += 2) {
             int size = queue.size();
             if (size == 0) {
                 break;
@@ -50,7 +58,7 @@ public class TreeNode {
                 queue.add(left);
             }
 
-            if (nums[i + 1] != null) {
+            if (i < nums.length - 1 && nums[i + 1] != null) {
                 TreeNode right = new TreeNode(nums[i + 1]);
                 cur.right = right;
                 queue.add(right);
