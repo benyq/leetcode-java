@@ -17,11 +17,11 @@ import java.util.Stack;
  * https://leetcode-cn.com/problems/sliding-window-maximum/
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.HARD)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.HARD)
 public class Question239 {
     public static void main(String[] args) {
         Question239 question = new Question239();
-        System.out.println(Arrays.toString(question.maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3)));
+        System.out.println(Arrays.toString(question.maxSlidingWindow2(new int[]{1,3,-1,-3,5,3,6,7}, 3)));
 //        System.out.println(Arrays.toString(question.maxSlidingWindow(new int[]{1}, 1)));
 //        System.out.println(Arrays.toString(question.maxSlidingWindow(new int[]{1,-1}, 1)));
 //        System.out.println(Arrays.toString(question.maxSlidingWindow(new int[]{9,11}, 2)));
@@ -89,4 +89,22 @@ public class Question239 {
         return result;
     }
 
+    public int[] maxSlidingWindow2(int[] nums, int k) {
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        int[] result = new int[nums.length - k + 1];
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            while (!deque.isEmpty() && deque.peek() < i - k + 1) {
+                deque.pop();
+            }
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.pollLast();
+            }
+            deque.offer(i);
+            if (i >= k - 1) {
+                result[index++] = nums[deque.peek()];
+            }
+        }
+        return result;
+    }
 }

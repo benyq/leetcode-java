@@ -15,7 +15,7 @@ import java.util.*;
  * https://leetcode-cn.com/problems/top-k-frequent-elements/comments/
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.MEDIUM)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.MEDIUM)
 public class Question347 {
     public static void main(String[] args) {
         Question347 question = new Question347();
