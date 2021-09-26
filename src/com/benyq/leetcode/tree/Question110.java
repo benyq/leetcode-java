@@ -62,4 +62,15 @@ public class Question110 {
         if (rightDepth < 0) return -1;
         return Math.abs(leftDepth - rightDepth) > 1 ? -1 : 1 + Math.max(leftDepth, rightDepth);
     }
+
+    private int depth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftD = depth(root.left);
+        if (leftD < 0) return -1;
+        int rightD = depth(root.right);
+        if (rightD < 0) return -1;
+        return Math.abs(leftD - rightD) > 1 ? -1 : 1 + Math.max(leftD, rightD);
+    }
 }
