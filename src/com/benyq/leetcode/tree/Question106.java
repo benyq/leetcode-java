@@ -25,17 +25,43 @@ public class Question106 {
         return buildTree(inorder, 0, inorder.length, postorder, 0, postorder.length);
     }
 
+//    private TreeNode buildTree(int[] inorder, int inLeft, int inRight,
+//                               int[] postorder, int postLeft, int postRight) {
+//        if (inRight - inLeft < 1) {
+//            return null;
+//        }
+//        if (inRight - inLeft == 1) {
+//            return new TreeNode(inorder[inLeft]);
+//        }
+//        int rootVal = postorder[postRight - 1];
+//        TreeNode root = new TreeNode(rootVal);
+//        //分割
+//        int rootIndex = 0;
+//        for (int i = inLeft; i < inRight; i++) {
+//            if (inorder[i] == rootVal) {
+//                rootIndex = i;
+//                break;
+//            }
+//        }
+//        root.left = buildTree(inorder, inLeft, rootIndex, postorder, postLeft, postLeft + (rootIndex - inLeft));
+//        root.right = buildTree(inorder, rootIndex + 1, inRight, postorder, postLeft + (rootIndex - inLeft), postRight - 1);
+//
+//        return root;
+//    }
+
+
     private TreeNode buildTree(int[] inorder, int inLeft, int inRight,
                                int[] postorder, int postLeft, int postRight) {
-        if (inRight - inLeft < 1) {
+
+        if (inRight < inLeft) {
             return null;
         }
         if (inRight - inLeft == 1) {
             return new TreeNode(inorder[inLeft]);
         }
+
         int rootVal = postorder[postRight - 1];
         TreeNode root = new TreeNode(rootVal);
-        //分割
         int rootIndex = 0;
         for (int i = inLeft; i < inRight; i++) {
             if (inorder[i] == rootVal) {
@@ -44,8 +70,8 @@ public class Question106 {
             }
         }
         root.left = buildTree(inorder, inLeft, rootIndex, postorder, postLeft, postLeft + (rootIndex - inLeft));
+        // postRight - 1 不能忘，因为最后一个已经是rootVal
         root.right = buildTree(inorder, rootIndex + 1, inRight, postorder, postLeft + (rootIndex - inLeft), postRight - 1);
-
         return root;
     }
 }
