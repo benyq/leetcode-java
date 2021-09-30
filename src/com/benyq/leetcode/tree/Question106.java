@@ -11,7 +11,7 @@ import com.benyq.leetcode.Status;
  * description:
  * 题目 106
  * https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
- * 路径总和
+ * 从中序与后序遍历序列构造二叉树
  */
 
 @Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.MEDIUM)
