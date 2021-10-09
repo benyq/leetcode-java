@@ -14,7 +14,7 @@ import com.benyq.leetcode.Status;
  * 二叉搜索树中的搜索
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.EASY)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.EASY)
 public class Question700 {
     public static void main(String[] args) {
         Question700 question = new Question700();

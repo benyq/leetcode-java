@@ -14,7 +14,7 @@ import com.benyq.leetcode.Status;
  * 合并二叉树
  */
 
-@Problem(status = Status.REPEAT, difficulty = ProblemDifficulty.EASY)
+@Problem(status = Status.RESOLVED, difficulty = ProblemDifficulty.EASY)
 public class Question617 {
     public static void main(String[] args) {
         Question617 question = new Question617();
